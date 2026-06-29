@@ -1,0 +1,217 @@
+.attribution,
+.attribution a {
+    text-align: center;
+    font-size: 12px;
+}
+main {
+    margin: 0 auto 4.5em;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+#mainImage {
+    width: 100%;
+}
+header {
+    margin: 4em 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar {
+    display: flex;
+    gap: 2.5em;
+}
+.navbar a {
+    color: hsl(236, 13%, 42%);
+    text-decoration: none;
+    transition: color 0.4s;
+}
+.navbar a:hover {
+    color: hsl(5, 85%, 63%);
+}
+.grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 66% minmax(0, 1fr);
+    grid-template-rows: 1fr 0.5fr 0.5fr;
+}
+.grid__section {
+    justify-content: space-between;
+    display: flex;
+    grid-area: 2 / 1 / 3 / 2;
+}
+.grid__h1 {
+    width: 40%;
+}
+.grid__h1 h1 {
+    font-weight: 800;
+    font-size: 55px;
+    color: #00001a;
+    line-height: 60px;
+}
+.grid__text {
+    width: 48%;
+    color: hsl(236, 13%, 42%);
+    line-height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.grid__cards {
+    display: flex;
+    grid-area: 3 / 1 / 4 / 3;
+    gap: 2.5em;
+}
+.readMore-btn {
+    padding: 1em;
+    width: 60%;
+    background: hsl(5, 85%, 63%);
+    border: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #00001a;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition:
+        background-color 0.4s,
+        color 0.4s;
+}
+.readMore-btn:hover {
+    background-color: #00001a;
+    color: white;
+}
+.grid__news {
+    padding: 2.5em 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    background: #00001a;
+    grid-area: 1 / 2 / 3 / 3;
+}
+.grid__news h2 {
+    color: hsl(35, 77%, 62%);
+    font-size: 40px;
+}
+.grid__news-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+.grid__news-section h3 {
+    font-size: 20px;
+    transition: color 0.4s;
+    cursor: pointer;
+}
+.grid__news-section h3:hover {
+    color: hsl(35, 77%, 62%);
+}
+.grid__news-section p {
+    line-height: 25px;
+    color: hsl(233, 8%, 79%);
+}
+.line {
+    width: 100%;
+    height: 0.5px;
+    background-color: hsl(236, 13%, 42%);
+}
+.grid__card-image img {
+    width: 150px;
+}
+.grid__card {
+    display: flex;
+    gap: 1.5em;
+    width: 32%;
+}
+.grid__card-text h4 {
+    font-size: 27px;
+    color: hsl(5, 85%, 63%);
+    font-weight: 700;
+}
+.grid__card-text h5 {
+    font-size: 17px;
+    transition: color 0.4s;
+    cursor: pointer;
+}
+.grid__card-text h5:hover {
+    color: hsl(5, 85%, 63%);
+}
+.grid__card-text p {
+    color: hsl(236, 13%, 42%);
+    line-height: 25px;
+}
+.grid__card-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.menu-Btn {
+    background-color: transparent;
+    border: none;
+    display: none;
+}
+@media (max-width: 600px) {
+    .grid {
+        grid-template: repeat(4, auto) / 100%;
+    }
+    .grid div {
+        grid-area: auto;
+    }
+    .grid__section {
+        flex-direction: column;
+        gap: 1em;
+    }
+    .grid__section div {
+        width: 100%;
+        gap: 1em;
+    }
+    .grid__news {
+        gap: 1.5em;
+    }
+    .grid__cards {
+        flex-direction: column;
+    }
+    .grid__card {
+        width: 100%;
+    }
+    .menu-Btn {
+        display: block;
+        z-index: 1;
+    }
+    .navbar a {
+        color: hsl(240, 100%, 5%);
+        font-weight: 500;
+    }
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        transform: translateX(100%);
+        transition: all 0.3s;
+        width: 65vw;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        background-color: #fff;
+        position: fixed;
+        justify-content: center;
+        padding: 3em;
+    }
+    .navbar.open {
+        transform: translateX(0);
+    }
+    .overlay {
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.4);
+        opacity: 0;
+        visibility: hidden;
+        transition:
+            opacity 0.3s,
+            visibility 0.3s;
+    }
+    .overlay.opened {
+        visibility: visible;
+        opacity: 1;
+    }
+}
